@@ -1,0 +1,12 @@
+CREATE TABLE category (
+    ct_id INT PRIMARY KEY IDENTITY(1,1),
+    ct_name VARCHAR(255),
+    image VARCHAR(MAX)
+);
+CREATE TABLE items (
+    itemid INT PRIMARY KEY identity(1,1),
+    itemname VARCHAR(255),
+    categoryname VARCHAR(255),
+    itemimage VARCHAR(500),
+    itemprice Varchar(30)
+);

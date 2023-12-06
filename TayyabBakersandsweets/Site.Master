@@ -1,0 +1,337 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TayyabBakersandsweets.SiteMaster" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Tayyab Sweets & Bakers</title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Tayyab Sweets & Bakers</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <asp:PlaceHolder runat="server">
+       
+    </asp:PlaceHolder>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+
+        .nav-bar::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background: #F195B2; 
+}
+        .myheader {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+       
+    }
+        body{
+            padding-top:100px;
+        }
+        .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    width: 100%;
+     padding-right: unset;
+     padding-left: unset;
+    margin-right: auto;
+    margin-left: auto;
+}
+        #cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+    #cart-icon1 {
+  position: relative;
+  cursor: pointer;
+}
+
+#cart-icon img {
+  width: 50px; /* Adjust as needed */
+}
+
+
+#cartcount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+}
+#cartcount1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+}
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="myheader">
+              <!-- Topbar Start -->
+     <!-- Topbar Start -->
+    <div class="container-fluid bg-primary py-3 d-none d-md-block" style="background-color:#F195B2;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                   
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        
+                        <a class="text-white pl-3" href="">
+                            <div id="cart-icon" onclick="showPopup3('cart')">
+    <img src="images/icons8-add-to-cart-40.png" style="width:40px; height:auto;" alt="Cart Icon">
+    <span id="cartcount" runat="server">0</span>
+  </div>
+                           
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Topbar End -->
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar bg-primary ">
+        <div class="container-lg position-relative   px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
+                <a href="index.html" class="navbar-brand d-block d-lg-none">
+                     <img src="images/tayyabbakers.jpg" height="80" />
+                  <%--  <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>--%>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="homepage.aspx" id="home" class="nav-item nav-link active">Home</a>
+                        <a href="About.aspx" id="about" class="nav-item nav-link">About</a>
+                        <a href="products.aspx" class="nav-item nav-link" id="product">Product</a>
+                    </div>
+                    <a href="homepage.aspx" class="navbar-brand mx-5 d-none d-lg-block">
+                        <img src="images/tayyabbakers.jpg" height="80" />
+                       <%-- <h1 class="m-0 display-4 text-primary" ><span class="text-secondary">t</span>Bakers</h1>--%>
+                    </a>
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="Services.aspx" id="service" class="nav-item nav-link">Service</a>
+                        <a href="gallery.aspx" id="gallery" class="nav-item nav-link">Gallery</a>
+                        <a href="contact.aspx" id="contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+
+              
+
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+        </div>
+       
+      
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+           
+        </div>
+         <!-- Footer Start -->
+    <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
+        <div class="container text-center py-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <a href="index.html" class="navbar-brand m-0">
+                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                    </a>
+                </div>
+                <div class="col-12 mb-4">
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-12 mt-2 mb-4">
+                    <div class="row">
+                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
+                            <h5 class="font-weight-bold mb-2">Get In Touch</h5>
+                            <p class="mb-2">123 Street, New York, USA</p>
+                            <p class="mb-0">+012 345 67890</p>
+                        </div>
+                        <div class="col-sm-6 text-center text-sm-left">
+                            <h5 class="font-weight-bold mb-2">Opening Hours</h5>
+                            <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
+                            <p class="mb-0">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentPage = window.location.pathname.split("/").pop();
+          
+            if (currentPage === 'products') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('product');
+                proid.classList.add("active");
+
+            } 
+           else if (currentPage === 'homepage') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('home');
+                proid.classList.add("active");
+
+            } 
+            else if (currentPage === 'Services') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('service');
+                proid.classList.add("active");
+
+            } 
+            else if (currentPage === 'About') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('about');
+                proid.classList.add("active");
+
+            } 
+            else if (currentPage === 'gallery') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('gallery');
+                proid.classList.add("active");
+
+            }
+            else if (currentPage === 'contact') {
+                var navLinks = document.querySelectorAll('.navbar-nav a.nav-link');
+
+                // Loop through each link and add the 'active' class if the href matches the current page
+                navLinks.forEach(function (link) {
+                    link.classList.remove("active");
+                });
+                var proid = document.getElementById('contact');
+                proid.classList.add("active");
+
+            } 
+
+            // Get all navigation links
+           
+        });
+    </script>
+
+
+</body>
+</html>
